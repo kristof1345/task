@@ -61,7 +61,7 @@ func Alltasks() ([]Task, error) {
 	return tasks, nil
 }
 
-func deleteTask(key int) error {
+func DeleteTask(key int) error {
 	return db.Update(func(tx *bolt.Tx) error {
 		b := tx.Bucket(taskBucket)
 		return b.Delete(itob(key))
